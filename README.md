@@ -1,3 +1,2 @@
-# Food Price Comparison Project
-
-OCR-based food price comparison between Swiggy and Zomato.
+# food-price-comparison
+Food price comparison using OCR
