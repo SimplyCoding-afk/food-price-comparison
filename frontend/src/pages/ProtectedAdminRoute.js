@@ -1,10 +1,10 @@
 import { Navigate } from "react-router-dom";
 
 function ProtectedAdminRoute({ children }) {
-  const token = localStorage.getItem("adminToken");
+  const isAdmin = localStorage.getItem("admin");
 
-  if (!token) {
-    return <Navigate to="/admin" replace />;
+  if (!isAdmin) {
+    return <Navigate to="/admin-login" replace />;
   }
 
   return children;
