@@ -1,18 +1,19 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import RoleSelection from "./pages/RoleSelection";
+import User from "./pages/User"; // This becomes your homepage
 import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
-import User from "./pages/User";
 import ProtectedAdminRoute from "./pages/ProtectedAdminRoute";
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<RoleSelection />} />
+        {/* 🏠 MAIN CHANGE: User page is now the homepage */}
+        <Route path="/" element={<User />} />
+        
+        {/* 🔐 Admin routes remain the same */}
         <Route path="/admin-login" element={<AdminLogin />} />
-
         <Route
           path="/admin"
           element={
@@ -21,8 +22,6 @@ function App() {
             </ProtectedAdminRoute>
           }
         />
-
-        <Route path="/user" element={<User />} />
       </Routes>
     </Router>
   );
